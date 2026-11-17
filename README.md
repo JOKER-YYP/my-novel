@@ -13,8 +13,11 @@ UniApp 小说阅读 / TTS 听书（无登录）。支持**多源并行搜索**�
 ```bash
 cd apps/uniapp
 npm install
-npm run dev:mp-weixin
+npm run dev:mp-weixin          # 微信小程序（不能用系统语音）
+npm run dev:app-android        # Android App 真机（系统语音 / 小米 TTS）
 ```
+
+系统听书请用 **HBuilderX → 运行 → 运行到手机或模拟器 → Android**，并确保 manifest 已勾选 Speech 模块。
 
 ### 真机搜不到 / request:fail
 
@@ -33,6 +36,17 @@ npm run dev:mp-weixin
 ## 说明
 
 - 搜索会并行请求已启用书源，结果合并去重
+- 听书对齐 Fanqie-novel-Downloader 产品模型：
+  - 三路来源：系统语音（默认，Android 原生 TextToSpeech / 小米自带引擎） / AI 音色（百度） / 真人有声
+  - **系统语音仅 App 真机可用**；微信小程序无法调用手机 TTS，请用 HBuilderX 运行到 Android 手机
+  - 小米请先开启：设置 → 更多设置 → 无障碍 → 文字转语音（TTS）输出
+  - 阅读进度与听书进度分离；跨章续听可选「接着上次听」或「从当前章节听」
+  - 阅读器内听书面板支持边听边读、自动跟随章节；播放中约每 10 秒落盘
+- 阅读器对齐番茄小说交互：
+  - 羊皮纸/竹影背景、手写楷体、大行距；点屏唤出顶栏/底栏
+  - 底栏：上一章·进度条·下一章；目录 / 夜间 / 设置 / 听书
+  - 设置：字号、字体、颜色圆点、背景缩略图、翻页模式（上下滚动）
+  - 目录半屏抽屉；听书句级高亮 + 底部「暂停/继续播放」胶囊
 - 红薯：触屏站 `g.hongshu.com/Bookajax/search`；免费章可读，VIP 章会提示
 - 布谷：`/search/?searchkey=`（需简易 clearance）；详情/目录/正文直连 HTML
 - 800小说：`POST /search.html`（字段 `s`，需动态 `waf_challenge`）；目录 `/book_{id}/ml{n}.html`；正文 `#txt`

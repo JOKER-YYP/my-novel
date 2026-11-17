@@ -1,0 +1,82 @@
+{
+  "pages": [
+    {
+      "path": "pages/index/index",
+      "style": {
+        "navigationBarTitleText": "听书匣"
+      }
+    },
+    {
+      "path": "pages/store/index",
+      "style": {
+        "navigationBarTitleText": "书城"
+      }
+    },
+    {
+      "path": "pages/bookshelf/index",
+      "style": {
+        "navigationBarTitleText": "书架"
+      }
+    },
+    {
+      "path": "pages/settings/index",
+      "style": {
+        "navigationBarTitleText": "设置"
+      }
+    },
+    {
+      "path": "pages/book/detail",
+      "style": {
+        "navigationBarTitleText": "详情"
+      }
+    },
+    {
+      "path": "pages/reader/index",
+      "style": {
+        "navigationBarTitleText": "阅读",
+        "navigationStyle": "custom",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#c6b697"
+      }
+    },
+    {
+      "path": "pages/player/index",
+      "style": {
+        "navigationBarTitleText": "播放器"
+      }
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "听书匣",
+    "navigationBarBackgroundColor": "#F7F3EB",
+    "backgroundColor": "#F7F3EB"
+  },
+  "tabBar": {
+    "color": "#8A8174",
+    "selectedColor": "#2F5D50",
+    "backgroundColor": "#FFFDF8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "搜索"
+      },
+      {
+        "pagePath": "pages/store/index",
+        "text": "书城"
+      },
+      {
+        "pagePath": "pages/bookshelf/index",
+        "text": "书架"
+      },
+      {
+        "pagePath": "pages/settings/index",
+        "text": "设置"
+      }
+    ]
+  },
+  "easycom": {
+    "autoscan": true
+  }
+}
